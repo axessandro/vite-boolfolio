@@ -5,8 +5,19 @@ export default {
   data(){
     return{
         store,
+        links: [
+            {
+                label: "Home",
+                routeName: "home"
+            },
+            {
+                label: "Projects",
+                routeName: "projects"
+            }
+        ],
+        hoverBtn: false
     }
-  }
+  },
 }
 </script>
 
@@ -20,14 +31,15 @@ export default {
 
             <div class="col d-flex align-items-center justify-content-center">
                 <div class="links-wrapper">
-                    <a class="px-2 btn btn-warning text-dark" href="">Link</a>
-                    <a class="px-2" href="">Link</a>
+                    <!-- <a class="px-2 btn btn-warning text-dark" href="">Link</a> -->
+                    <span class="mx-1" v-for="(link, index) in links" :key="index">
+                        <router-link class="px-2 btn" :to="{ name: link.routeName}">{{ link.label }}</router-link>
+                    </span>
                 </div>
             </div>
             
             <div class="col d-flex align-items-center justify-content-end">
                 <a class="mr-3 px-2 btn btn-dark text-warning" :href="store.apiBaseUrl + 'admin'">Admin view</a>
-
             </div>
         </div>
     </div>
@@ -38,14 +50,18 @@ export default {
 @use "../style/general.scss" as *;
 
 nav{
-    background-color: $dark-color;
+    height: 10vh;
     h1{
         color: $primary-color;
     }
     .links-wrapper{
-        a{
+        .btn{
             color: white;
             text-decoration: none;
+            &:hover{
+                background-color: $primary-color;
+                color: $dark-color;
+            }
         }
     }
     

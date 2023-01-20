@@ -4,5 +4,6 @@ $primary-color: rgb(236, 200, 0);
 $secondary-color: rgb(250, 255, 191);
 $dark-color: rgb(31, 31, 31);
 body{
-    background-color: rgb(58, 58, 58);
+    background: rgb(31,31,31);
+    background: linear-gradient(180deg, rgba(31,31,31,1) 10%, rgba(77,77,77,1) 45%, rgba(139,132,91,1) 81%, rgba(184,165,48,1) 100%);
 }
