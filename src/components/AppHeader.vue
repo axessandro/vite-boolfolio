@@ -25,7 +25,7 @@ export default {
             </div>
             
             <div class="col d-flex align-items-center justify-content-end">
-                <a class="mr-3 px-2 btn btn-dark text-warning" href="'${baseUrl}' + 'admin'">Admin view</a>
+                <a class="mr-3 px-2 btn btn-dark text-warning" :href="baseUrl + 'admin'">Admin view</a>
 
             </div>
         </div>
