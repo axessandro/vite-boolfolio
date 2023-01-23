@@ -44,6 +44,10 @@ export default{
             </div> 
             <span class="card-subtitle text-muted" v-if="!project.technologies.length">Not assigned</span>
         </li>
+
+        <li class="list-group-item bg-dark text-white d-flex justify-content-center align-items-center">
+            <router-link :to="{ name: 'single-project', params:{ slug: project.slug } }" class="btn btn-warning">Details</router-link>
+        </li>
   </ul>
 </div>
 </template>
